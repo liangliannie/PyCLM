@@ -18,18 +18,18 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='ELM Diagnostics at Fluxnet',
+    name='PyCLM',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
     version='1.0.0',
 
-    description='This is a python package for ELM site Diagnostics',
-    long_description=long_description,
+    description='ELM Diagnostics at Fluxnet',
+    long_description='This package can be used to analyize data',
 
     # The project's main homepage.
-    url='https://github.com/liangliannie/ornl_site_analysis',
+    url='https://github.com/liangliannie/PyCLM',
 
     # Author details
     author='Liang Li',
@@ -56,15 +56,16 @@ setup(
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
         'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
     ],
 
     # What does your project relate to?
-    keywords='sample setuptools development',
+    keywords='Data Wavelet IMF CML',
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    packages=find_packages(exclude=['contrib', 'docs', 'tests']),
+    packages=find_packages(exclude=['Data', 'Src', 'Example']),
 
     # Alternatively, if you want to distribute just a my_module.py, uncomment
     # this:
@@ -74,36 +75,36 @@ setup(
     # your project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['matplotlib', 'numpy', 'sklearn', 'PyEMD', 'pylab', 'os'],
+    install_requires=['matplotlib', 'numpy', 'scikit-learn', 'pyemd'],
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax,
     # for example:
     # $ pip install -e .[dev,test]
-    extras_require={
-        'dev': ['matplotlib', 'numpy', 'sklearn', 'PyEMD', 'pylab', 'os'],
-        'test': ['netCDF4'],
-    },
+#     extras_require={
+#         'dev': ['matplotlib', 'numpy', 'sklearn', 'PyEMD', 'pylab', 'os'],
+#         'test': ['netCDF4'],
+#     },
 
     # If there are data files included in your packages that need to be
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
-    package_data={
-        'sample': ['package_data.nc'],
-    },
+#     package_data={
+#         'sample': ['package_data.nc'],
+#     },
 
     # Although 'package_data' is the preferred approach, in some case you may
     # need to place data files outside of your packages. See:
     # http://docs.python.org/3.4/distutils/setupscript.html#installing-additional-files # noqa
     # In this case, 'data_file' will be installed into '<sys.prefix>/my_data'
-    data_files=[('my_data', ['data/package_data.nc'])],
+#     data_files=[('my_data', ['Data/package_data.nc'])],
 
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
-    entry_points={
-        'console_scripts': [
-            'sample=sample:main',
-        ],
-    },
+#     entry_points={
+#         'console_scripts': [
+#             'sample=sample:main',
+#         ],
+#     },
 )
