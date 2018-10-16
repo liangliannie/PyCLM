@@ -1,2 +1,2 @@
-# PyCLM
-This project is created for CLM Diagnostics
+# PyELM
+This project is created for ELM Diagnostics
